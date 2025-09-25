@@ -33,38 +33,28 @@ public class MainActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.editMatKhau);
         btnLogin = findViewById(R.id.btnDN);
         btnRegister = findViewById(R.id.btnDK);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String user = edtUsername.getText().toString().trim();
-                String pass = edtPassword.getText().toString().trim();
-
-                if (user.equals("admin") && pass.equals("123")) {
-                    Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        });
-        btnRegister.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-            startActivity(intent);
-        });
         btnLogin.setOnClickListener(v -> {
             String user = edtUsername.getText().toString().trim();
             String pass = edtPassword.getText().toString().trim();
 
-            // Lấy dữ liệu trong SharedPreferences
             SharedPreferences prefs = getSharedPreferences("accounts", MODE_PRIVATE);
             String savedPass = prefs.getString(user, null);
 
             if (savedPass != null && savedPass.equals(pass)) {
                 Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, SetTripActivity.class);
+                startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(MainActivity.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
             }
         });
+
+        btnRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 }

@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".SetTripActivity" />
+        <activity android:name=".TripListActivity" />
     </application>
 
 </manifest>
