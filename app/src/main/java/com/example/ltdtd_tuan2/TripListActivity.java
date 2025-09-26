@@ -53,10 +53,10 @@ public class TripListActivity extends AppCompatActivity {
         listTrips.setOnItemClickListener((parent, view, position, id) -> {
             String tripName = trips.get(position);
 
-//            Intent intent = new Intent(TripListActivity.this, TripDetailActivity.class);
-//            intent.putExtra("tripName", tripName);
-//            intent.putExtra("tripType", tripType);
-//            startActivity(intent);
+            Intent intent = new Intent(TripListActivity.this, TripDetailActivity.class);
+            intent.putExtra("tripName", tripName);
+            intent.putExtra("tripType", tripType);
+            startActivity(intent);
         });
     }
 }

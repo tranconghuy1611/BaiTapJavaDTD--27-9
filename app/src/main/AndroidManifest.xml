@@ -24,6 +24,11 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SetTripActivity" />
         <activity android:name=".TripListActivity" />
+        <activity android:name=".TripDetailActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".BankLoginActivity" />
+        <activity android:name=".MyTripsActivity" />
+        <activity android:name=".SuccessActivity" />
     </application>
 
 </manifest>
